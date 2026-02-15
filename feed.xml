@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AI Daily Pulse</title>
+    <link>https://sunisankara.github.io/ai-pulse-podcast</link>
+    <language>en-us</language>
+    <itunes:author>Sundaram Labs</itunes:author>
+    <itunes:summary>Your daily 15-minute conversational deep dive into latest AI developments. Headless production.</itunes:summary>
+    <description>Automated daily AI intelligence briefing.</description>
+    <itunes:owner>
+      <itunes:name>Sundaram Labs</itunes:name>
+      <itunes:email>broadcast@sundaramlabs.ai</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:category text="Technology"/>
+    <itunes:image href="https://sunisankara.github.io/ai-pulse-podcast/cover.jpg"/>
+    <lastBuildDate>Fri, 13 Feb 2026 13:05:45 GMT</lastBuildDate>
+    
+  </channel>
+</rss>
