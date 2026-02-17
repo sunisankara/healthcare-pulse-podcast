@@ -13,10 +13,10 @@ import { Buffer } from 'buffer';
 const IS_TEST = process.env.IS_TEST === 'true';
 
 async function run() {
-  console.log('--- AI DAILY PULSE: CLOUD BROADCAST v0.7.0 ---');
+  console.log('--- HEALTHCARE DAILY PULSE: CLOUD BROADCAST v0.7.0 ---');
   console.log(`Timestamp: ${new Date().toISOString()}`);
   const id = Date.now().toString();
-  const filename = `AI-Pulse-${id}.mp3`;
+  const filename = `Heathcare-Pulse-${id}.mp3`;
   const pcmFile = `temp-${id}.pcm`;
 
   try {
@@ -24,7 +24,7 @@ async function run() {
       console.log('DIAGNOSTIC MODE TRIGGERED...');
       execSync(`ffmpeg -f lavfi -i "sine=frequency=440:duration=1" -acodec libmp3lame -ab 128k ${filename}`);
     } else {
-      console.log('Step 1: 7-Pillar Intelligence Gathering...');
+      console.log('Step 1: News Segment Intelligence Gathering...');
       const report = await fetchAINews();
       console.log('Intelligence gathered successfully.');
       
@@ -55,7 +55,7 @@ async function run() {
       }
     }
 
-    const repoPath = process.env.GITHUB_REPOSITORY || 'sunisankara/ai-pulse-podcast';
+    const repoPath = process.env.GITHUB_REPOSITORY || 'sunisankara/healthcare-pulse-podcast';
     const [owner, repoName] = repoPath.split('/');
     const baseUrl = `https://${owner}.github.io/${repoName}`;
 
