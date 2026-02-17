@@ -14,20 +14,20 @@ async function withRetry<T>(fn: () => Promise<T>, retries = 3, delay = 1000): Pr
 }
 
 export const fetchAINews = async (categories: string[] = []): Promise<any> => {
-  const prompt = `Act as a senior technical intelligence analyst for software architects and CTOs.
-  Research exactly 7 breaking AI developments from the last 24-48 hours.
-  
-  PILLAR REQUIREMENTS (1 item per pillar):
-  1. ADVANCED TECH: New SOTA benchmarks, model architectures, or weight releases.
-  2. MARKET/M&A: Major acquisitions, board changes, or significant stock movement.
-  3. USER TOOLS: Developer productivity, IDE extensions, CLI improvements.
-  4. INFRA/SERVICES: Cloud provider updates (AWS/Azure/GCP/CoreWeave).
-  5. VENTURE/STARTUPS: Funding rounds (Series A+), stealth exits, or massive seed rounds.
-  6. LEGISLATURE/POLICY: US specific laws, copyright rulings, or senate hearings.
-  7. ACADEMIA: Significant ArXiv papers or institutional breakthroughs.
+  const prompt = `Role: You are a Senior Healthcare Strategy Consultant AI specializing in the "Alvarez & Marsal" style of operational turnaround and financial restructuring.
 
-  DATA REQUIREMENT: Every story MUST include at least one hard number ($, parameter count, percentage, or date).
-  [METADATA] TOP_STORIES: Story 1, Story 2, Story 3, Story 4, Story 5, Story 6, Story 7`;
+  CONTEXT: I am Shankar Sundaram, a Senior Director at A&M. My background is in Payor space and Technology. 
+  My goal is to use this daily briefing to broaden my horizon into hospital operations, clinical mechanics, and the "so what" of latest industry shifts.
+
+  TASK: Write a high-density conversational NEWSCAST script for "Healthcare Daily Pulse by Sundaram Labs" based on events from the LAST 24-48 HOURS.
+
+  SEARCH REQUIREMENTS: Before writing, search for the latest news (within 48 hours) regarding:
+  - Major Healthcare M&A or Restructuring (e.g., spinoffs, bankruptcies, PE acquisitions).
+  - New CMS Mandates, Federal Laws, or Regulatory Rulings.
+  - Large-scale operational projects undertaken by Top 20 Health Systems.
+  - Breakthroughs in 'Agentic AI' or health-tech implementation.
+
+  DATA REQUIREMENT: Every story MUST include at least one hard number ($, parameter count, percentage, or date).`;
 
   const response = await ai.models.generateContent({
     model: 'gemini-3-flash-preview',
@@ -50,26 +50,25 @@ export const fetchAINews = async (categories: string[] = []): Promise<any> => {
 };
 
 export const generatePodcastScript = async (newsSummary: string) => {
-  const prompt = `Write a high-density conversational NEWSCAST script for "AI Daily Pulse by Sundaram Labs".
+  const prompt = `Write a high-density conversational NEWSCAST script for "Healthcare Daily Pulse by Sundaram Labs".
   
   TARGET LENGTH: 15 minutes (~2,200 words).
   FORMAT: Byte-sized news segments. Rapid fire delivery.
   
   HOSTS:
-  - Alex (FEMALE Technical Architect): Critical, implementation-focused, skeptical of hype.
-  - Marcus (MALE Strategy Executive): Optimistic, ROI-focused, market-visionary.
+  - Alex (FEMALE Technical Architect): Critical, implementation-focused, skeptical of hype. (Reflecting my Payor/Tech expertise).
+  - Marcus (MALE Strategy Executive): Optimistic, ROI-focused, market-visionary, "War Room" pragmatic. (Reflecting the A&M transformation lens).
 
-  TONE: Professional, fast, data-driven. Not a documentary. A technical newscast.
+  TONE: A balance of "Consultant Optimism" and "War Room Pragmatism." Fast-paced, data-driven.
 
   STRUCTURE:
-  - Intro: "Top of the hour. AI Daily Pulse by Sundaram Labs. I'm Alex. And I'm Marcus. 7 pillars of intelligence in 15 minutes. Let's go."
-  - For each of the 7 pillars:
-    - Marcus delivers the 'Headline' with quantifiable data.
-    - Alex interrupts with a 30-second 'Architect's Take' on why it matters technically.
-    - Marcus counters with the 'Strategic ROI' take.
-    - MANDATORY: Wrap each pillar with the tag [TRANSITION].
-  - Outro: "This is a production of Sundaram Labs. Subscribe for your daily briefing. We'll be back tomorrow."
-
+  - Intro: "Top of the hour. AI Daily Pulse by Sundaram Labs. I'm Alex. And I'm Marcus. Key Healthcare news in 15 minutes. Let's go."
+  - For each of the news segment, follow this flow:
+    - Marcus: Delivers the 'Headline' with quantifiable data from the last 48 hours.
+    - Alex: Interrupts with the 'Architect’s Take'—Explain the technical/operational friction of this news. How does it break existing systems?
+    - Marcus: Counters with the 'Strategic ROI'—What is the cause of this event? Why did the M&A happen? How should a consultant advise a CEO to react?
+    MANDATORY: Wrap each news segment with the tag [TRANSITION].
+  - Outro Script: "This is a production of Sundaram Labs. Subscribe for your daily briefing. We'll be back tomorrow."
   NEWS DATA TO CONVERT:
   ${newsSummary}`;
 
