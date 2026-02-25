@@ -54,7 +54,7 @@ jobs:
           else
             git commit -m "New Episode: $(date +'%Y-%m-%d %H:%M')"
             
-            # 3. CRITICAL: Pull latest with rebase to handle the 'fetch first' error
+            # 3. CRITICAL: Pull latest  with rebase to handle the 'fetch first' error
             # This merges any changes that happened on GitHub while we were generating audio
             git pull origin main --rebase
             
