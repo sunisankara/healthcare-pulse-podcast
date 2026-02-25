@@ -36,12 +36,12 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           IS_TEST: ${{ github.event.inputs.is_test || 'false' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: npx tsx headless.ts
+        run: # npx tsx headless.ts
 
       - name: Commit and Push Broadcast
         run: |
-          git config --global user.name "AI Daily Pulse Bot"
-          git config --global user.email "broadcast@sundaramlabs.ai"
+          git config --global user.name "Heathcare Pulse Bot"
+          git config --global user.email "shankar.sundaram.0@gmail.com"
           
           # 1. Stage all changes (new MP3s, updated JSON, updated feed.xml)
           git add .
