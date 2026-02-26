@@ -24,7 +24,7 @@ export const generateEpisodeMetadata = async (summary: string) => {
     config: { temperature: 0.8 }
   });
 
-  return response.text?.trim().replace(/^"|"$/g, '') || "Daily Healthcare Intelligence Briefing: The Latest Technical and Market Evolution Observed Today";
+  return response.text?.trim().replace(/^"|"$/g, '') || "Daily Healthcare Intelligence Briefing: The Latest Technical and Market Evolution in Healthcare Observed Today";
 };
 
 export const fetchAINews = async (categories: string[] = []): Promise<any> => {
@@ -32,10 +32,10 @@ export const fetchAINews = async (categories: string[] = []): Promise<any> => {
   const now = new Date();
   const dateString = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   
-  const prompt = `Act as a Senior Healthcare Strategy Consultant AI specializing in the "Alvarez & Marsal" style of operational turnaround and financial restructuring.
+  const prompt = `Act as a Senior Healthcare Strategy Consultant specializing in the "Alvarez & Marsal" style of operational turnaround and financial restructuring.
   TODAY'S DATE IS: ${dateString}.
 
-  CONTEXT: I am Shankar Sundaram, a Senior Director at A&M. My background is in Payor space and Technology. 
+  CONTEXT: I am Shankar Sundaram, a Senior Director at A&M. My background is in Healthcare Payor space. 
   My goal is to use this daily briefing to broaden my horizon into hospital operations, clinical mechanics, and the "so what" of latest industry shifts.
   
   TASK: Write a high-density conversational NEWSCAST script for "Healthcare Daily Pulse by Sundaram Labs" based on events from the LAST 24-48 HOURS. Research and synthesize around 7 breaking Healthcare developments from the last 24 to 48 hours. 
@@ -48,10 +48,10 @@ export const fetchAINews = async (categories: string[] = []): Promise<any> => {
   - DO NOT include any news from more than 7 days ago.
   - If the story isn't from ${now.getMonth() + 1}/${now.getDate() - 1} or ${now.getMonth() + 1}/${now.getDate()}, IGNORE IT.
 
-  DATA REQUIREMENT: Every story MUST include at least one hard number ($, parameter count, percentage, or date).
+  DATA REQUIREMENT: Every story MUST include at least one hard number (dollars, time period, percentage, market share, market cap, or date) and mention of a major company associated with the news
   
   REPORTING STYLE:
-  - Technical: Parameters, FLOPs, Latency, Throughput.
+  - Financial: Focus on Revenue, P&L, market share, EBITDA
   - Sentiment: Aggregate consensus from Hacker News / X / GitHub from the LAST 12 HOURS.
 
   [METADATA] TOP_STORIES: (List 7 short headlines separated by commas)`;
@@ -86,13 +86,13 @@ export const generatePodcastScript = async (newsSummary: string) => {
   FORMAT: Byte-sized news segments. Rapid fire delivery.
   
   HOSTS:
-  - Alex (Female): Skeptical Technical Architect. Critical, implementation-focused, skeptical of hype. (Reflecting my Payor/Tech expertise).
+  - Alex (Female): Skeptical Financial Architect. Critical, implementation-focused, skeptical of hype. (Reflecting my Payor expertise).
   - Marcus (Male): Optimistic, ROI-focused, market-visionary, "War Room" pragmatic. (Reflecting the A&M transformation lens). Focuses on "How does this change the competitive landscape?"
 
   CONVERSATION FLOW:
   - DO NOT mention "pillars", "categories", or numbered lists.
   - Marcus leads with a breakdown of a new story, Alex pushes back with technical constraints.
-  - Use natural segues like "That actually maps to the infra news we saw earlier..." or "Wait, before we move on, the latency numbers there are wild..."
+  - Use natural segues like "That actually maps to the infra news we saw earlier..." or "Wait, before we move on, the market share are wild..."
   - MANDATORY: Use [TRANSITION] between major news items to help the production engine.
 
   DATA TO SYNTHESIZE:
