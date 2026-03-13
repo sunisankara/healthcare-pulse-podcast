@@ -21,9 +21,9 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Install System Tools
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
@@ -38,7 +38,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           IS_TEST: ${{ github.event.inputs.is_test || 'false' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: # npx tsx headless.ts
+        run: npx tsx headless.ts
 
       - name: Commit and Push Broadcast
         run: |
@@ -62,3 +62,4 @@ jobs:
             git push origin main
             echo "Broadcast successfully pushed to repository."
           fi
+
