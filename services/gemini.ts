@@ -148,7 +148,7 @@ export const generateSegmentAudio = async (text: string): Promise<string[]> => {
   for (const chunk of chunks) {
     const data = await withRetry(async () => {
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-2.5-flash-preview-tts",
         contents: [{ parts: [{ text: chunk }] }],
         config: {
           responseModalities: [Modality.AUDIO],
@@ -169,15 +169,3 @@ export const generateSegmentAudio = async (text: string): Promise<string[]> => {
   }
   return results;
 };
-
-
-
-
-
-
-
-
-
-
-
-
