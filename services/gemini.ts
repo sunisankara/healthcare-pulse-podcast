@@ -1,5 +1,7 @@
-﻿import { GoogleGenAI, Modality } from "@google/genai";
+import { GoogleGenAI, Modality } from "@google/genai";
 import process from 'process';
+import fs from 'fs';
+import path from 'path';
 
 async function withRetry<T>(fn: () => Promise<T>, retries = 3, delay = 1000): Promise<T> {
   try {
@@ -31,12 +33,9 @@ export const fetchAINews = async (categories: string[] = []): Promise<any> => {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   let historyTitles = "";
   try {
-    const fs = require('fs');
-    const path = require('path');
     const epPath = path.join(process.cwd(), 'rss', 'episodes.json');
     if (fs.existsSync(epPath)) {
       const eps = JSON.parse(fs.readFileSync(epPath, 'utf-8'));
-      // Get titles from the last 15 episodes (covering ~7-10 days) to prevent repeats
       const r = eps.slice(0, 15).map(function(e){ return e.title + (e.mainStories ? ": " + e.mainStories.join(", ") : "") }).join(" | ");
       if (r) historyTitles = "RECENTLY COVERED TOPICS (DO NOT REPEAT): " + r;
     }
