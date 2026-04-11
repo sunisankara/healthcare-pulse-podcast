@@ -10,19 +10,19 @@ export function generateRSSFeed(
   const items = episodes
     .map(e => {
       const storyList = e.mainStories && e.mainStories.length > 0 
-        ? `<p><strong>Intelligence Brief:</strong></p><ul>${e.mainStories.map(s => `<li>${s}</li>`).join('')}</ul><hr/>`
+        ? `<p><strong>Intelligence Brief:</strong></p><ul>${e.mainStories.map(s => `<li>${s.replace(/&/g, '&amp;')}</li>`).join('')}</ul><hr/>`
         : '';
       
       const audioLink = e.audioUrl.startsWith('http') 
         ? e.audioUrl 
         : `${baseUrl.replace(/\/$/, '')}/${e.audioUrl.replace(/^\//, '')}`;
         
-      const formattedScript = e.script.replace(/\n/g, '<br/>');
+      const formattedScript = e.script.replace(/&/g, '&amp;').replace(/\n/g, '<br/>');
 
       return `
     <item>
-      <title>${e.title}</title>
-      <description><![CDATA[${storyList}<p>${e.script.substring(0, 500)}...</p>]]></description>
+      <title>${e.title.replace(/&/g, '&amp;')}</title>
+      <description><![CDATA[${storyList}<p>${e.script.substring(0, 500).replace(/&/g, '&amp;')}...</p>]]></description>
       <content:encoded><![CDATA[${storyList}${formattedScript}]]></content:encoded>
       <pubDate>${new Date(e.date).toUTCString()}</pubDate>
       <guid isPermaLink="false">${e.id}</guid>
