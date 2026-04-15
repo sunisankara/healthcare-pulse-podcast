@@ -126,7 +126,7 @@ const App: React.FC = () => {
              <i className={`fas ${isVaultLocked ? 'fa-shield-halved' : 'fa-satellite-dish'}`}></i>
            </div>
            <div>
-              <h1 className="text-6xl font-black italic text-blue-400 tracking-tighter uppercase leading-none mb-2">AI Daily Pulse</h1>
+              <h1 className="text-6xl font-black italic text-blue-400 tracking-tighter uppercase leading-none mb-2">Healthcare Daily Pulse</h1>
               <p className="text-[11px] font-black text-gray-500 tracking-[0.5em] uppercase">Station Control | {VERSION}</p>
            </div>
         </div>

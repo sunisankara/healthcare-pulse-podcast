@@ -27,7 +27,7 @@ export function generateRSSFeed(
       <pubDate>${new Date(e.date).toUTCString()}</pubDate>
       <guid isPermaLink="false">${e.id}</guid>
       <enclosure url="${audioLink}" length="0" type="audio/mpeg"/>
-      <itunes:author>AI Daily Pulse</itunes:author>
+      <itunes:author>Healthcare Daily Pulse</itunes:author>
       <itunes:duration>15:00</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
     </item>`;
@@ -36,7 +36,7 @@ export function generateRSSFeed(
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AI Daily Pulse</title>
+    <title>Healthcare Daily Pulse</title>
     <link>${baseUrl}</link>
     <language>en-us</language>
     <itunes:author>Sundaram Labs</itunes:author>
