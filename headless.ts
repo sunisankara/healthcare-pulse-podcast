@@ -17,7 +17,7 @@ const RSS_DIR = 'rss';
 const DB_PATH = path.join(RSS_DIR, 'episodes.json');
 
 async function run() {
-  console.log('--- AI DAILY PULSE: CLOUD BROADCAST ENGINE v0.9.8 ---');
+  console.log('--- HEALTHCARE DAILY PULSE: CLOUD BROADCAST ENGINE v0.9.8 ---');
   console.log(`Current Working Dir: ${process.cwd()}`);
   
   if (!fs.existsSync(RSS_DIR)) {
@@ -26,7 +26,7 @@ async function run() {
   }
 
   const id = Date.now().toString();
-  const filename = `AI-Pulse-${id}.mp3`;
+  const filename = `Healthcare-Pulse-${id}.mp3`;
   const filePath = path.join(RSS_DIR, filename);
   const pcmFile = `temp-${id}.pcm`;
 
