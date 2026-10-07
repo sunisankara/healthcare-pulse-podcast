@@ -1,5 +1,23 @@
 [
   {
+    "id": "1791397310373",
+    "date": "2026-10-07T18:23:39.730Z",
+    "title": "Lawmakers Challenge CMS on Proposed Remote Patient Monitoring Restrictions",
+    "script": "(Sound of energetic, modern news intro music fades slightly under hosts)\n\n**Sam:** Welcome back to Healthcare Daily Pulse, your rapid-fire download on the sector's most critical shifts. Today, we're dissecting regulatory tremors, market-shaping M&A, and cutting-edge delivery innovation. I'm Sam, joined by Alex.\n\n**Alex:** And I'm Alex. We're cutting straight through the noise to the P&L impact and implementation friction you need to know. No fluff, just facts and their financial fallout.\n\n**Sam:** First up: a significant challenge to CMS. A bipartisan group of 32 House lawmakers, led by Representatives Kustoff and Balderson, are directly urging Administrator Mehmet Oz to reconsider proposed Medicare payment changes for Remote Patient Monitoring, or RPM, and Remote Therapeutic Monitoring, RTM. The core of the controversy: a draft Medicare physician pay rule that would prohibit RPM and RTM codes from being billed when services aren't performed by a clinical staff member *directly employed* by the billing practitioner. This effectively disallows current widespread contracting out to third-party companies. Alex, immediate implementation friction, P&L impact?\n\n**Alex:** Sam, this isn't just friction; it's a seismic shift in operational models for thousands of providers, with direct, quantifiable P&L consequences for both providers and payors. For providers, particularly small, independent physician practices and rural hospitals, this proposal is a financial vise. They've built their RPM infrastructure on a third-party vendor",
+    "audioUrl": "Healthcare-Pulse-1791397310373.mp3",
+    "topics": [
+      "Lawmakers Challenge CMS on Proposed Remote Patient Monitoring Restrictions",
+      "Novo Nordisk Embarks on Multi-Billion Pound Acquisition Spree for New Cardiometabolic Therapies",
+      "Phillips Medisize Unveils New Framework for High-Dose Subcutaneous Drug Delivery"
+    ],
+    "mainStories": [
+      "Lawmakers Challenge CMS on Proposed Remote Patient Monitoring Restrictions",
+      "Novo Nordisk Embarks on Multi-Billion Pound Acquisition Spree for New Cardiometabolic Therapies",
+      "Phillips Medisize Unveils New Framework for High-Dose Subcutaneous Drug Delivery"
+    ],
+    "status": "published"
+  },
+  {
     "id": "1791308837442",
     "date": "2026-10-06T17:55:31.458Z",
     "title": "CMS Finalizes Rules to Enhance Healthcare Price and Coverage Transparency",
